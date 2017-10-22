@@ -1,5 +1,5 @@
 #! /usr/bin/env python2.7
-from default import *
+from .default import *
 
 """
 This is the local settings template file. So, do not modify this file.
@@ -16,10 +16,10 @@ DATABASES = {
     'default': {
         # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dev_database_name',
+        'NAME': 'postgres',
         # The rest is not used with sqlite3:
-        'USER': 'dev_user',
-        'PASSWORD': 'dev_p@ssword',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
         'HOST': 'localhost',
         'PORT': '',
     }

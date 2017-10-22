@@ -16,17 +16,15 @@ import sys
 # Django settings for {{ project_name }} - suitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
-ALLOWED_HOSTS = (
-
-)
+ALLOWED_HOSTS = ['*']
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # Make this unique, and don't share it with anybody.
 # http://www.miniwebtool.com/django-secret-key-generator/
-SECRET_KEY = '!!! paste your own secret key here !!!'
+SECRET_KEY = 'p9wfrl8=_$8ht(!cm)(x(@9pm(vbhg+$5!9w_1s^g^t(4*22$5'
 
 # Absolute paths for where the project and templates are stored.
 ABS_PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
@@ -42,11 +40,11 @@ ADMINS = (
 MANAGERS = ADMINS
 
 
-ROOT_URLCONF = '{{ project_name }}.urls'
+ROOT_URLCONF = 'aws-codepipeline-tutorial.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
 # disabled - outsite the app
-WSGI_APPLICATION = '{{ project_name }}.wsgi.application'
+WSGI_APPLICATION = 'aws-codepipeline-tutorial.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
@@ -56,10 +54,10 @@ DATABASES = {
         # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
         #'ENGINE': 'django.db.backends.{{ db_engine }}',
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '{{ db_name }}',
+        'NAME': 'postgres',
         # The rest is not used with sqlite3:
-        'USER': '{{ db_user }}',
-        'PASSWORD': '{{ db_p@ssword }}',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
         'CONN_MAX_AGE': 60,
         'HOST': 'localhost',
         'PORT': '',
@@ -82,12 +80,11 @@ DJANGO_APPS = (
 )
 
 LOCAL_APPS = (
-    '{{ project_name }}.home',
+    'aws-codepipeline-tutorial.home',
 )
 
 EXTERNAL_APPS = (
     'django_extensions',
-    'compressor',
 )
 
 # the order is important!

@@ -18,8 +18,8 @@ The first line of local.py should be:
 """
 
 try:
-    # The first line of local.py should be "from default import *", then it 
+    # The first line of local.py should be "from default import *", then it
     # can override those settings it sees fit.
-    from local import * 
+    from .local import *
 except ImportError:
-    from default import *
+    from .default import *
